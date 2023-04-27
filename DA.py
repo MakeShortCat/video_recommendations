@@ -223,7 +223,7 @@ cosine_sim_create_year = cosine_similarity(create_year_encoded, create_year_enco
 cosine_sim_running_time = cosine_similarity(running_time_encoded, running_time_encoded)
 
 # 영화 추천해주는 함수 정의
-def get_recommendations(title, comment_weight = 0.05, synopsis_weight = 1, genre_weight = 0.07, year_weight = 0.02, running_time_weight = 0.01):
+def get_recommendations(title, comment_weight = 0.02, synopsis_weight = 1.2, genre_weight = 0.045, year_weight = 0.001, running_time_weight = 0.001):
     
     try:
         idx = title_to_index[title]
@@ -282,5 +282,5 @@ def get_recommendations(title, comment_weight = 0.05, synopsis_weight = 1, genre
 
     return just_merged_df['title'].iloc[movie_indices]
 
-get_recommendations('주온')
+get_recommendations('Interstelar')
 
